@@ -35,7 +35,7 @@ const FeedUrlExtractor = () => {
 
   return (
     <div className="max-w-md mx-auto mt-10 p-6 bg-white rounded-lg shadow-xl">
-      <h1 className="text-2xl font-bold mb-4">Feed URL Extractor</h1>
+      <h1 className="text-2xl font-bold mb-4">Article Image URL Extractor</h1>
       <form onSubmit={handleSubmit} className="mb-4">
         <input
           type="url"
@@ -62,7 +62,7 @@ const FeedUrlExtractor = () => {
 
       {feedUrls.length > 0 && (
         <div>
-          <h2 className="text-xl font-semibold mb-2">Found Feed URLs:</h2>
+          <h2 className="text-xl font-semibold mb-2">Found Image URLs:</h2>
           <ul className="list-disc pl-5">
             {feedUrls.map((feedUrl, index) => (
               <li key={index} className="mb-1">
