@@ -1,0 +1,6 @@
+modules = ["bun-1.0"]
+
+[[ports]]
+localPort = 3000
+externalPort = 3000
+exposeLocalhost = true
