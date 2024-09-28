@@ -21,11 +21,11 @@ const handler: Handler = async (event) => {
       }
     }
 
-    const feedUrls = extractFeedUrls(html, url)
+    const urls = extractFeedUrls(html, url)
 
     return {
       statusCode: 200,
-      body: JSON.stringify({ feedUrls }),
+      body: JSON.stringify({ urls }),
     }
   } catch (error) {
     console.error('Error:', error)
