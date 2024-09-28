@@ -45,12 +45,12 @@ async function fetchHtml(url: string): Promise<string> {
 }
 
 function extractFeedUrls(html: string, baseUrl: string): string[] {
-  const regex = /<link[^>]*type=["'](application\/rss\+xml|application\/atom\+xml)["'][^>]*href=["']([^"']+)["'][^>]*>/gi
+  const regex = /<meta[^>]+property\s*=\s*["']og:image["'][^>]+content\s*=\s*["']([^"']+)["'][^>]*>/gi;
   const feedUrls: string[] = []
   let match: RegExpExecArray | null;
 
   while ((match = regex.exec(html)) !== null) {
-    const feedUrl = new URL(match[2], baseUrl).href
+    const feedUrl = new URL(match[1], baseUrl).href
     feedUrls.push(feedUrl)
   }
 
